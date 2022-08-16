@@ -87,18 +87,6 @@ li {
 
 /* -------------------------- */
 
-.navbar {
-  height: 56px;
-  --bs-navbar-padding-y: 0.5;
-}
-.header-menu {
-  top: 0;
-  color: #fff;
-  display: flex;
-  justify-content: flex-end;
-  width: 10%;
-}
-
 header label {
   font-size: 30px;
   cursor: pointer;

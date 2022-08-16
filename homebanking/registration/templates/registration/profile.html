@@ -1,0 +1,17 @@
+{% extends 'ITBA/base-nav-inicio.html' %}
+<!-- Agregamos el contenido estatico-->
+{% load static %}
+<!-- Agregamos el titulo de la home -->
+{% block title %}ITBANK logout{% endblock %}
+<!-- Agregamos la imagen de fondo -->
+<!-- Agregamos la informacion que queremos en el header-->
+
+{% block my_header %}
+{% endblock %}
+
+<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
+{% block content %}
+<div class="p-3" style="background:rgb(218, 232, 230)">
+    <p>Hola {{ request.user.username }} estas en tu perfil </p>
+</div>
+{% endblock %}
