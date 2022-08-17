@@ -1,18 +1,20 @@
 let movimientos = [];
+let cuentas = [];
+let tarjetas = [];
 
+width = document.documentElement.clientWidth;
+height = document.documentElement.clientHeight;
 //chequeo si la lista aun no tiene objetos
 if (movimientos.length == 0) {
   //div contenedor donde se pushean todos los movimientos
-  let contenedor = document.getElementById("Movimientos");
-  //creo div y le asigno clase
-  let div = document.createElement("div");
-  div.className = "divisor-movimientos";
-  let liTexto = document.createElement("li");
-  let ul = document.createElement("ul");
-  liTexto.textContent = "Todavía no has realizado ningún movimiento... :)";
-  ul.append(liTexto);
-  div.append(ul);
-  contenedor.append(div);
+  let contenedor = document.getElementById("cuerpoMovimientos");
+  let tr = document.createElement("tr");
+  tr.setAttribute("id", "movimientoConformado");
+  tr.classList = "text-center";
+  let td = document.createElement("td");
+  td.textContent = "Todavía no has realizado ningún movimiento... :)";
+  tr.append(td);
+  contenedor.append(tr);
 }
 
 function generarNumeroRandom() {
@@ -20,21 +22,20 @@ function generarNumeroRandom() {
 }
 
 function agregarMov() {
-  // fixAltura();
-  if (movimientos.length == 8) {
-    document.getElementById("Movimientos").style.height =
-      document.getElementById("Movimientos").clientHeight;
+  //fixx de altura
+
+  if (document.getElementById("padre-ultimosmovimientos").clientHeight > 600) {
+    document
+      .getElementById("main-contenedor")
+      .setAttribute(
+        "style",
+        "background: var(--gradient); height:max-content;"
+      );
   }
-
-  let div = document.createElement("div");
-  div.className = "divisor-movimientos";
-
   //creacion de nuevo objeto
-
   let objetoMovimiento = new Object();
 
   //creo un numero random para hardcoedar un numero de operacion al objeto
-
   function nOperacion(lista) {
     if (lista.length > 0) {
       for (x in lista) {
@@ -54,7 +55,10 @@ function agregarMov() {
   objetoMovimiento.destino = prompt("DONDE O A QUIEN SE LE PAGÓ");
   objetoMovimiento.fecha = new Date().toLocaleString();
 
-  div.setAttribute(
+  let tr = document.createElement("tr");
+  tr.setAttribute("id", "movimientoConformado");
+
+  tr.setAttribute(
     "onclick",
     "mostrar('overlay');datosDelOverlay('" +
       objetoMovimiento.nOperacion +
@@ -73,38 +77,30 @@ function agregarMov() {
 
   movimientos.push(objetoMovimiento);
 
-  let ul = document.createElement("ul");
-  let liFecha = document.createElement("li");
-  let liTexto = document.createElement("li");
-  let liMetodoPago = document.createElement("li");
-  ul.setAttribute("id", "liUltMov");
+  contenedor = document.getElementById("cuerpoMovimientos");
+  let td = document.createElement("td");
+  let divInfo = document.createElement("div");
+  divInfo.classList = "d-flex justify-content-between";
+  let divFecha = document.createElement("div");
+  let divTipoMovimiento = document.createElement("div");
+  divTipoMovimiento.classList = "fw-semibold";
+  let divMonto = document.createElement("div");
 
-  liTexto.textContent =
-    objetoMovimiento.tipoDeMovimiento +
-    " a " +
-    objetoMovimiento.destino +
-    ": $" +
-    objetoMovimiento.gasto;
-  liMetodoPago.textContent = "Pago realizado con: " + objetoMovimiento.metodo;
-  liFecha.textContent = objetoMovimiento.fecha;
+  divFecha.textContent = objetoMovimiento.fecha;
+  divTipoMovimiento = objetoMovimiento.tipoDeMovimiento;
+  divMonto.textContent = "$ " + objetoMovimiento.gasto;
 
-  ul.append(liTexto);
-  ul.append(liMetodoPago);
-  ul.append(liFecha);
-  div.append(ul);
-
+  divInfo.append(divTipoMovimiento, divMonto);
+  td.append(divFecha, divInfo);
+  tr.append(td);
   if (movimientos.length == 1) {
-    let divAux = document.createElement("div");
-    divAux.append(div);
-    document.getElementById("Movimientos").innerHTML = divAux.innerHTML;
+    let trAux = document.createElement("tr");
+    trAux.append(tr);
+    contenedor.innerHTML = trAux.innerHTML;
   } else if (movimientos.length > 1) {
-    document.getElementById("Movimientos").prepend(div);
+    contenedor.prepend(tr);
   }
 }
-
-width = document.documentElement.clientWidth;
-height = document.documentElement.clientHeight;
-window.onresize = reportWindowSize;
 
 function ocultar(id) {
   let elemento = document.getElementById(id);
@@ -140,7 +136,7 @@ document.addEventListener(
   function (event) {
     if (
       !event.target.closest("#overlayHijo") &&
-      !event.target.closest("#liUltMov")
+      !event.target.closest("#movimientoConformado")
     ) {
       ocultar("overlay");
     }

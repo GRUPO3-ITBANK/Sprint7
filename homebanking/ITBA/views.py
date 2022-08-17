@@ -7,4 +7,4 @@ def index(request):
 
 def home(request):
     return render(request, "ITBA/home.html")
-    
+

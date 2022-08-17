@@ -7,9 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {% load static %}
   <link href="{% static 'ITBA/vendor/bootstrap.min.css' %}" rel="stylesheet" />
-  <link href="{% static 'ITBA/css/general.css' %}" rel="stylesheet" />
-  <link href="{% static 'ITBA/css/style.css' %}" rel="stylesheet" />
   <link href="{% static 'ITBA/css/fontello.css' %}" rel="stylesheet" />
+  {% block css %}
+  {% endblock %}
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
   <script src="https://kit.fontawesome.com/c64a36e535.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -24,11 +25,11 @@
   {% block content %}
   {% endblock %}
   <!-- Footer -->
-  <footer class="footer text-center text-lg-start bg-color text-light">
+  <footer class="footer text-center text-lg-start bg-color text-light position-relative p-3">
     <section class="">
-      <div class="container text-center text-md-start mt-1">
+      <div class="container text-center text-md-start">
         <!-- Grid row -->
-        <div class="row mt-3">
+        <div class="row">
           <!-- Grid column -->
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
@@ -94,8 +95,9 @@
   </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% block scripts %}
+
+{% endblock %}
 <script src="{% static 'ITBA/js/menu.js' %}"></script>
-<script src="{% static 'ITBA/js/preciodolar.js' %}"></script>
-<script src="{% static 'ITBA/vendor/bootstrap.bundle.min.js' %}"></script>
 
 </html>
