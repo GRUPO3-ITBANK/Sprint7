@@ -24,7 +24,6 @@ urlpatterns = [
     path('', ITBA.views.index, name="index"),
     path('index/', ITBA.views.index, name="index"),
     path('admin/', admin.site.urls),
-    path('profile/', registration.views.profile, name='profile'),
     path('logout-session/', registration.views.logout, name='logout-session'),
     path('accounts/',include('django.contrib.auth.urls'))
 ]

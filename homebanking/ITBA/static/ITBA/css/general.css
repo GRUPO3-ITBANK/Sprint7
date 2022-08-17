@@ -37,6 +37,7 @@
   background: var(--bg-col);
 }
 html {
+  background: var(--bg-col);
   min-height: 100%;
   position: relative;
 }
