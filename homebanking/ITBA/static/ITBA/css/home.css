@@ -403,7 +403,7 @@ a.button4 {
 
 .action-p {
   top: 10px;
-  right: 25px;
+  margin-right: 25px;
 }
 .action-p .profile-p {
   position: relative;
@@ -425,7 +425,7 @@ a.button4 {
 .action-p .menu-p {
   position: absolute;
   top: 70px;
-  right: 30px;
+  right: 15px;
   padding: 10px 0px;
   background: rgb(255, 255, 255);
   width: 180px;
