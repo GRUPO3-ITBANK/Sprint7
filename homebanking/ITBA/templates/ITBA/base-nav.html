@@ -12,10 +12,10 @@
 <header class="shadow-lg">
     <!-- NAVBAR -->
     <nav class="navbar bg-color">
-        <div class="container-fluid container">
+        <div class="container-fluid ">
 
             <!-- LOGO -->
-            <a href="./index.html">
+            <a href="{% url 'index' %}">
                 <img class="logo" src="{% static 'ITBA/img/LOGO.png' %}" class="d-inline-block align-text-top" />
             </a>
 
@@ -35,7 +35,7 @@
                     <ul>
                         <li> <a href="#">Mi perfil</a></li>
                         <li> <a href="#">Configuración</a></li>
-                        <li> <a href="#">Cerrar sesión</a></li>
+                        <li> <a href="{% url 'logout' %}">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                 <li><a href="#">Sub item4</a></li>
             </ul>
         </li>
-        <li><a href="#">Inversiones y Seguros</a></li>
+        <li><a href="#">Prestamos</a></li>
         <li><a href="#">Contacto</a></li>
     </ul>
 </nav>

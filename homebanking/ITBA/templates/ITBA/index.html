@@ -6,8 +6,8 @@
 <!-- Agrego contenido -->
 {% block content %}
 {% block spansNavbar %}
-<a href="./index.html" class="ap personas text-light fw-semibold">PERSONAS</a>
-<a href="./indexE.html" class="ap empresas text-light fw-semibold ms-4">EMPRESAS</a>
+<a href="{% url 'index' %}" class="ap personas text-light fw-semibold">Personas</a>
+<a href=# class="ap empresas text-light fw-semibold ms-4">Empresas</a>
 {% endblock spansNavbar %}
 <div style="background: var(--gradient)">
   <div class="container car mb-5 shadow" id="contenedor-carrusel">
