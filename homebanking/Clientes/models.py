@@ -23,15 +23,6 @@ class Cliente(models.Model):
     class Meta:
         db_table = 'Clientes'
 
-# @receiver(post_save,sender=MyUser)
-# def create_user_cliente(sender,instance,created,**kwargs):
-#     if created:
-#         Cliente.objects.create(MyUser=instance)
-
-# @receiver(post_save,sender=MyUser)
-# def save_user_cliente(sender,instance,**kwargs):
-#     instance.cliente.save()
-
 
 
 
