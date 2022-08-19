@@ -6,3 +6,6 @@ class Movimiento(models.Model):
     monto = models.FloatField()
     tipo_operacion = models.TextField()
     hora = models.DateTimeField(auto_now_add=True, blank=True)
+
+    class Meta:
+        db_table="Movimientos"

@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,15 +36,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ITBA',
     'Clientes',
+    'ITBA',
     'Cuentas',
     'Tarjetas',
     'Prestamos',
     'Login',
     'Movimientos',
     'Empleados',
-    'registration'
+    'registration',
     
 ]
 
@@ -94,7 +93,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
-AUTH_USER_MODEL = 'Clientes.Cliente'
+AUTH_USER_MODEL = 'Login.MyUser'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

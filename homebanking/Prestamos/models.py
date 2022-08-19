@@ -6,3 +6,6 @@ class Prestamo(models.Model):
     tipo = models.TextField()
     total = models.FloatField()
     ID_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table="Prestamos"

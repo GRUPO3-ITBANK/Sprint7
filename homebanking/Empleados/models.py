@@ -7,3 +7,5 @@ class Empleado(models.Model):
     fecha_contratacion=models.DateField()
     DNI=models.TextField(max_length=25)
     
+    class Meta:
+        db_table="Empleados"

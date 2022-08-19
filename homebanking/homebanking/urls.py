@@ -27,5 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('logout-session/', registration.views.logout, name='logout-session'),
     path('accounts/',include('django.contrib.auth.urls')),
-    path('alta-clientes/', Clientes.views.alta_cliente, name="alta_cliente")
+    # path('alta-clientes/', Clientes.views.alta_cliente, name="alta_cliente")
 ]
