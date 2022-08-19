@@ -1,5 +1,3 @@
-from datetime import datetime
-from unittest.util import _MAX_LENGTH
 from django.db import models
 from Clientes.models import Cliente
 from django.core.validators import MaxValueValidator, MinValueValidator

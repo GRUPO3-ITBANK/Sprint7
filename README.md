@@ -52,8 +52,8 @@ En todo momento el formulario informará si la solicitud fue aprobada o rechazad
 
 ---
 
-SuperUser: pinocho
-Contraseña: 123
+Superusuario: 9000
+Contraseña: 9000
 
-User: gonza
-Contraseña: panconqueso
+Usuario comun: 120
+Contraseña: 120
