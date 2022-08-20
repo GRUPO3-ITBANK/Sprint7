@@ -14,7 +14,7 @@ class Cliente(models.Model):
     tipo_cliente = models.CharField(max_length=1,choices=TIPOS)
     
     def __str__(self):
-        return "DNI " + self.DNI +": "+ self.nombre +" "+  self.apellido
+        return  " (ID: " + str(self.id) + "): "+ self.nombre +" "+  self.apellido +", DNI: " + self.DNI 
 
     class Meta:
         db_table = 'Clientes'

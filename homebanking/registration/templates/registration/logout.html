@@ -11,9 +11,15 @@
 
 <!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
 {% block content %}
-<div class="p-3" style="background:rgb(218, 232, 230)">
-    <p>Has salido de la sesión {{ request.user.username }}!</p>
-    <a href="{% url 'login'%}">Hace clic aca nuevamente para iniciar sesión.</a>
+<div class="p-3 d-flex align-items-center" style="background: var(--gradient); height:700px">
+    <div class="col-md-5 mx-auto m-5 bg-light rounded p-5">
+
+        <h3 class="mb-4">Cerraste sesion exitosamente</h3>
+
+
+        <!--Opción de olvido de contraseña-->
+        <a href="{% url 'login'%}">Hace clic aca nuevamente para iniciar sesión.</a>
+    </div>
 
 </div>
 {% endblock %}

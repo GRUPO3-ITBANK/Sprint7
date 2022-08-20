@@ -5,7 +5,35 @@
 {% block title %}Prestamos{% endblock %}
 <!-- Agrego contenido -->
 {% block content %}
-<section class="vh-100" style="background: var(--gradient);">
-
-</section>
+<div class="d-flex align-items-center justify-content-center" style="background: var(--gradient); height:700px">
+    <div class="d-flex justify-content-center bg-light rounded p-4">
+        <form action="" method="POST">
+            {% if 'ok' in request.GET %}
+            <P class="text-success">Su mensaje se envió</P>
+            {% endif %}
+            {% csrf_token %}
+            <table>
+                <div class="d-flex">
+                    <div class="p-2">
+                        <b>Nombre</b>
+                        <input type="text" name="name" required="" id="id_name" class="form-control">
+                    </div>
+                    <div class="p-2">
+                        <b>Correo</b>
+                        <input type="email" name="email" required="" id="id_email" class="form-control">
+                    </div>
+                </div>
+                <div class='p-2'>
+                    <b>Mensaje</b>
+                    <textarea name="content" cols="40" rows="10" required="" id="id_content"
+                        class="form-control"></textarea>
+                </div>
+            </table>
+            <div class="d-flex justify-content-center">
+                <input type="submit" value="Enviar" class="btn btn-dark" />
+            </div>
+    </div>
+    </form>
+</div>
 {% endblock %}
+{{request.POST}}

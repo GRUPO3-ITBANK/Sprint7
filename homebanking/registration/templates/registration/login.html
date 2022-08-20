@@ -2,7 +2,7 @@
 <!-- Agregamos el contenido estatico-->
 {% load static %}
 <!-- Agregamos el titulo de la home -->
-{% block title %}ITBANK login{% endblock %}
+{% block title %}login{% endblock %}
 
 {% block content %}
 <style>
@@ -10,7 +10,7 @@
         color: red;
     }
 </style>
-<div class="p-5" style="background:var(--gradient)">
+<div class="p-5" style="background:var(--gradient); height:800px">
     {% if not request.user.is_authenticated %}
     <main role=" main">
         <div class="container">
@@ -33,7 +33,7 @@
         </div>
     </main>
     {% else %}
-    <p>Ya inciaste sesión como {{ request.user.username }}</p>
+    <meta http-equiv="REFRESH" content="0;url={% url 'home' %}">
     {% endif %}
 
 </div>
