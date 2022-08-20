@@ -9,24 +9,49 @@
     <div class="d-flex justify-content-center bg-light rounded p-4">
         <form action="" method="POST">
             {% if 'ok' in request.GET %}
-            <P class="text-success">Su mensaje se envió</P>
+            <P class="text-success">Su prestamo se solicitó correctamente</P>
+            {% endif %}
+            {% if 'classic' in request.GET %}
+            <P class="text-danger">Su prestamo excede los 100000, supera su limite como cliente Classic</P>
+            {% endif %}
+            {% if 'gold' in request.GET %}
+            <P class="text-danger">Su prestamo excede los 300000, supera su limite como cliente Gold</P>
+            {% endif %}
+            {% if 'black' in request.GET %}
+            <P class="text-danger">Su prestamo excede los 500000, supera el limite permitido</P>
             {% endif %}
             {% csrf_token %}
+
             <table>
-                <div class="d-flex">
-                    <div class="p-2">
-                        <b>Nombre</b>
-                        <input type="text" name="name" required="" id="id_name" class="form-control">
-                    </div>
-                    <div class="p-2">
-                        <b>Correo</b>
-                        <input type="email" name="email" required="" id="id_email" class="form-control">
-                    </div>
+                <p class="p-2 h5 "><strong>
+                        Solicitud de prestamo aprobado
+                    </strong></p>
+
+                <div class="ps-2 mb-3">
+                    <b><small>Monto ($)</small></b>
+                    <input type="number" min=1 name="total" required="" id="total" class="form-control">
                 </div>
-                <div class='p-2'>
-                    <b>Mensaje</b>
-                    <textarea name="content" cols="40" rows="10" required="" id="id_content"
-                        class="form-control"></textarea>
+
+
+
+
+                <div class='ps-2 mb-4'>
+                    <b><small>Tipo de prestamo</small></b>
+                    <select class="form-select" aria-label="Default select example" required="" name="tipo">
+                        <option selected></option>
+                        <option value="Hipotecario">Hipotecario</option>
+                        <option value="Prendario">Prendario</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+                </div>
+
+                <div class='ps-2 mb-5'>
+                    <b><small>Fecha de inicio</small></b>
+                    <div class="md-form md-outline input-with-post-icon datepicker">
+                        <input placeholder="Select date" type="date" min="today" id="datePickerId" class="form-control"
+                            name="fecha_prestamo" required="">
+
+                    </div>
                 </div>
             </table>
             <div class="d-flex justify-content-center">
@@ -35,5 +60,8 @@
     </div>
     </form>
 </div>
+<script>
+    datePickerId.min = new Date().toISOString().split("T")[0];
+</script>
 {% endblock %}
 {{request.POST}}

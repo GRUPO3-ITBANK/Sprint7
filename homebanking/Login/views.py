@@ -1,8 +1,8 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth.hashers import make_password
 from Clientes.models import Cliente
+from .models import MyUser
 from .forms import UserCreationForm
 
 def alta_usuario(request):
