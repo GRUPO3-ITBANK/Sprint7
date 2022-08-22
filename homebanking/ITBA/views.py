@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from Cuentas.models import Cuenta
 # Create your views here.
 
 def init(request):
@@ -13,7 +13,10 @@ def index(request):
 
 def home(request):
     if request.user.is_authenticated:
-        return render(request, "ITBA/home.html")
+        saldoCajaAhorro= Cuenta.objects.get(ID_cliente=request.user.id_cliente.id).balance
+        print(saldoCajaAhorro)
+        return render(request, "ITBA/home.html",{"saldoCajaAhorro":saldoCajaAhorro})
+        
     else:
         return render(request, "ITBA/index.html")
 

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import Prestamo
+from Cuentas.models import Cuenta
 from Clientes.models import Cliente
 def prestamos(request):
     if not (request.user.is_authenticated):
@@ -21,5 +22,10 @@ def prestamos(request):
             return redirect(reverse('prestamos')+"?black")
         else:
             Prestamo(fecha_prestamo=fecha_prestamo,tipo=tipo, total=total, ID_cliente=ID_cliente).save()
+
+            cuenta_id_cliente = Cuenta.objects.get(ID_cliente=request.user.id_cliente.id)
+            cuenta_id_cliente.balance= cuenta_id_cliente.balance + total
+            cuenta_id_cliente.save()
+            print(cuenta_id_cliente.balance)
         return redirect(reverse('prestamos')+"?ok")
     return render(request, 'Prestamos/prestamos.html')
