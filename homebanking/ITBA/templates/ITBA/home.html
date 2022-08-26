@@ -27,10 +27,10 @@
 
   <div class="col-md7" id="A">
 
-    <div class="dinero-disponible col-12 md-5 " id="padre-dineroDisponible">
+    <div class="dinero-disponible col-12 md-5 " id="padre-dineroDisponible" style="place-self: center;">
       <div class="col" id="hijo-dineroDisponible">
         <div class="columna-saldo w-100">
-          <h2 class="fw-bold" id="textTusaldo">Cuentas ($)</h2>
+          <h2 class="fw-bold d-flex h5 ps-5"><em>Cuentas ($)</em></h2>
           <div class="container">
             <div class="row ms-4 me-4 mb-2">
               <div class="col-auto me-auto flex-fill">
@@ -39,20 +39,19 @@
             </div>
             <div class="ms-4 me-4">
               <table id="cuentas" class="table table-hover">
-
                 <tbody id="cuentasBody">
                   <tr>
                     <td>
                       <div class="d-flex justify-content-between">
                         <div class="fw-semibold ">Caja de ahorro</div>
 
-                        <div>$ <span><span>{{saldoCajaAhorro}}</span>
+                        <div>$ <span><span>{{totalCajaAhorro}}</span>
                         </div>
 
                       </div>
                       <div class="d-flex justify-content-between fw-lighter">
                         <div>Cta. N° <span id="nCuenta">xxxxxxxxx</span></div>
-                        <div>Saldo</div>
+                        <div></div>
                       </div>
                     </td>
                   </tr>
@@ -64,7 +63,7 @@
                       </div>
                       <div class="d-flex justify-content-between fw-lighter">
                         <div>Cta. N° <span id="nCuenta">xxxxxxxxx</span></div>
-                        <div>Saldo</div>
+                        <div></div>
                       </div>
                     </td>
                   </tr>
@@ -72,17 +71,45 @@
               </table>
             </div>
           </div>
-
-        </div>
-
-        <div class="w-100">
         </div>
       </div>
+
       <div class="col" id="hijo-dineroDisponible">
         <div class="columna-saldo w-100">
-          <h2 class="fw-bold" id="textTusaldo">Tarjetas</h2>
-
-          <div class="linea"></div>
+          <h2 class="fw-bold d-flex h5 ps-5"><em>Tarjetas</em></h2>
+          <div class="container">
+            <div class="row ms-4 me-4 mb-2">
+              <div class="col-auto me-auto flex-fill">
+              </div>
+            </div>
+            <div class="ms-4 me-4">
+              <table id="cuentas" class="table table-hover">
+                <tbody id="cuentasBody">
+                  <tr>
+                    <td>
+                      <div class="d-flex justify-content-between">
+                        <div class="fw-semibold ">Tarjeta</div>
+                      </div>
+                      <div class="d-flex justify-content-between fw-lighter">
+                        <div>N° <span id="nCuenta">xxxxxxxxx</span></div>
+                        <div></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex justify-content-between">
+                        <div class="fw-semibold ">Tarjeta</div>
+                      </div>
+                      <div class="d-flex justify-content-between fw-lighter">
+                        <div>N° <span id="nCuenta">xxxxxxxxx</span></div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -92,10 +119,9 @@
   <div class="col-12 md-5" id="B">
     <div class="dinero-disponible col-12  md-5 " id="padre-ultimosmovimientos">
       <div class="col" id="hijo-ultimosmovimientos">
-
-        <button type="submit" id="addmov" class="btn btn-success" onclick="agregarMov()">+</button>
+        <h2 class="fw-bold d-flex h5 ps-5"><em>Últimos movimientos</em></h2>
         <div class="container">
-          <h3 class="ms-4">Últimos movimientos</h3>
+
           <div class="row ms-4 me-4 mb-2">
             <div class="col-auto me-auto flex-fill">
               <div class="input-group input-group-sm">

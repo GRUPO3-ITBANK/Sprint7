@@ -64,7 +64,6 @@ body {
   border-image-slice: 1; */
   height: 56px;
   flex-wrap: nowrap;
-  padding: 0 30px;
   position: fixed;
   width: 100%;
   z-index: 99999;

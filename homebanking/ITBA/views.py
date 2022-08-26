@@ -13,9 +13,8 @@ def index(request):
 
 def home(request):
     if request.user.is_authenticated:
-        saldoCajaAhorro= Cuenta.objects.get(ID_cliente=request.user.id_cliente.id).balance
-        print(saldoCajaAhorro)
-        return render(request, "ITBA/home.html",{"saldoCajaAhorro":saldoCajaAhorro})
+        totalCajaAhorro= Cuenta.objects.get(ID_cliente=request.user.id_cliente.id).balance
+        return render(request, "ITBA/home.html",{"totalCajaAhorro":totalCajaAhorro})
         
     else:
         return render(request, "ITBA/index.html")

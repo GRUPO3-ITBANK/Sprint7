@@ -88,7 +88,7 @@ header label:hover {
 .menu ul {
   display: flex;
   list-style: none;
-  padding: 5px 5px 5px 5px;
+  padding: 10px 0px 0px 0px;
   justify-content: center;
   background-color: var(--togglemenu);
 }
@@ -124,7 +124,7 @@ header label:hover {
   opacity: 0.87;
   top: 0;
   position: fixed;
-  top: 56px;
+  top: 54px;
   left: 0;
   width: 100%;
   transition: all 0.3s;
@@ -290,11 +290,7 @@ header label:hover {
   padding: 10px 0px 10px 0px;
   margin-bottom: 30px;
 }
-#textTusaldo {
-  font-size: large;
-  display: flex;
-  padding: 5px 20px;
-}
+
 .botones-A {
   position: relative;
   display: flex;
@@ -538,8 +534,6 @@ ul {
   #A {
     width: 100%;
     text-align: center;
-
-    margin-top: 40px;
     min-height: max-content;
   }
   #B {
@@ -551,14 +545,14 @@ ul {
     width: 85%;
     text-align: center;
     margin: 0px auto;
-    padding: 0px 20px;
+    padding: 0px 20px 20px;
   }
 
   #padre-dineroDisponible {
+    margin-top: 80px;
     position: relative;
     width: 85%;
     text-align: center;
-    margin: 0px auto;
     padding: 0px 20px;
     min-height: min-content;
   }
